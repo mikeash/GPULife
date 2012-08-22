@@ -212,12 +212,8 @@
 double curTime(void)
 {
     static struct mach_timebase_info timebase;
-//    int timebaseInited = 0;
-//    if(!timebaseInited)
-//    {
-//        timebaseInited = 1;
-        mach_timebase_info(&timebase);
-//    }
+    mach_timebase_info(&timebase);
+
     return (double)((mach_absolute_time() * timebase.numer) / timebase.denom) / 1000.0;
 }
 
